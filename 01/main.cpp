@@ -27,7 +27,12 @@ public:
 
     char* alloc(size_t size)
     {
-        if (current_ptr + size > start_ptr + buf_size)
+        if (start_ptr == nullptr)
+        {
+            return nullptr;
+        }
+        
+        else if (current_ptr + size > start_ptr + buf_size)
         {
             return nullptr;
         }
